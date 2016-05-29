@@ -37,7 +37,7 @@ View 的根 dom 对象，可以是一段html代码或者一个选择器。
 
 ## API
 
-### el
+### el { Object }
   
 View 的原生dom对象。
 
@@ -46,7 +46,7 @@ var view = View.extend({...})
 view.el
 ```
 
-### $el
+### $el { Object }
 
 View 的 jquery 对象。
 
@@ -55,7 +55,7 @@ var view = View.extend({...})
 view.$el
 ```
 
-### $
+### $ { function }
 
 jquery 选择器
 
@@ -63,7 +63,7 @@ jquery 选择器
 var view = View.extend({...})
 view.$('selector')
 ```
-### destroy
+### destroy { function }
 
 销毁 View，同事解绑绑定到 View 上的是件。
 
