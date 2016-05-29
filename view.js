@@ -41,7 +41,7 @@
         if(this.init && typeof this.init == 'function') {
             this.$el = $(this.el) || $('<div></div>')
             this.el = this.$el[0]
-            this.bindEvents()
+            this._bindEvents()
             this.init()
         }else {
             console.error('please add init function')
@@ -53,12 +53,12 @@
         destroy: function() {
             //解绑挂载的所有事件
             this.$el.off()
-            this.$el.html('')
+            this.$el.remove()
         },
         $: function(selector) {
             return this.$el.find(selector)
         },
-        bindEvents: function(){
+        _bindEvents: function(){
             if(!this.events){
                 return
             }
