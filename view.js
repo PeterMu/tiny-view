@@ -37,12 +37,12 @@
       }
     }
     
-    function View() {
+    function View(opts) {
         if(this.init && typeof this.init == 'function') {
             this.$el = $(this.el) || $('<div></div>')
             this.el = this.$el[0]
             this._bindEvents()
-            this.init()
+            this.init(opts)
         }else {
             console.error('please add init function')
         }

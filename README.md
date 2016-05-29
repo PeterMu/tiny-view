@@ -5,22 +5,25 @@
 ## Get Started
 
 ```
-    var Demo = View.extend({
-        el: '<div class="test"></div>',
-        init: function() {
-            this.render()
-        }, 
-        events: {
-            'click button': 'clickFunc'
-        },
-        render: function(){
-            this.$el.html('<button>Click me!</button>')
-        },
-        clickFunc: function() {
-            alert('u click me')
-        }
-    })
-    var demo = new Demo
+var Demo = View.extend({
+    el: '<div class="test"></div>',
+    init: function(opts) {
+        console.log('init', opts.name)
+        this.render()
+    }, 
+    events: {
+        'click button': 'clickFunc'
+    },
+    render: function(){
+        this.$el.html('<button>Click me!</button>')
+    },
+    clickFunc: function() {
+        alert('u click me')
+    }
+})
+var demo = new Demo({
+    name: 'demo'
+})
 ```
 
 ## 配置参数

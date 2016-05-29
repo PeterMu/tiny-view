@@ -1,7 +1,8 @@
 !function (){
     var Demo = View.extend({
         el: '<div class="test"></div>',
-        init: function() {
+        init: function(opts) {
+            console.log('init', opts.name)
             this.render()
         }, 
         events: {
@@ -14,7 +15,9 @@
             alert('u click me')
         }
     })
-    var demo = new Demo
+    var demo = new Demo({
+        name: 'demo'
+    })
     $('#main').html(demo.el)
 }()
 
