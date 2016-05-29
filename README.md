@@ -36,7 +36,15 @@ View 的根 dom 对象，可以是一段html代码或者一个选择器。
 
 创建View时，调用的初始化函数。
 
-### 没了，就这俩配置参数。
+### events { Object }
+
+配置监听的事件和回调函数。
+
+```
+events: {
+    'event selector': 'function name'
+}
+```
 
 ## API
 
