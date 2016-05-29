@@ -1,6 +1,6 @@
 # 超轻量级 View 库 
 
-80 行代码实现的超轻量 View 库，使用方法类似 Backbone.View，依赖jquery（1.8 +）。
+80 行代码实现的超轻量 View 库，使用方法类似 Backbone.View，依赖 jquery(1.8+)。
 
 ## Get Started
 
