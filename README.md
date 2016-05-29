@@ -65,7 +65,7 @@ view.$('selector')
 ```
 ### destroy { function }
 
-销毁 View，同事解绑绑定到 View 上的是件。
+销毁 View，同时解绑绑定到 View 上的事件。
 
 ### 其他没有了，就是这么简单。
 
