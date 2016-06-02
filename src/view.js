@@ -36,7 +36,20 @@
             return fBound;
       }
     }
-    
+
+	function deepClone(parent, child) {
+	    var child = child || {};
+	    for (var key in parent) {
+	        if (typeof parent[key] === 'object') {
+	            child[key] = (parent[key].constructor === Array) ? [] : {};
+	            deepClone(parent[key], child[key]);
+	        } else {
+	            child[key] = parent[key];
+	        }
+	    }
+	    return child;
+	}
+
     function View(opts) {
         if(this.init && typeof this.init == 'function') {
             this.$el = $(this.el) || $('<div></div>')
@@ -74,12 +87,19 @@
     }
 
     View.extend = function (opts){
+        var parent = this
+        var child = function() {
+            return parent.apply(this, arguments)
+        }
+        child.prototype = deepClone(parent.prototype)
+        child.prototype.constructor = child
         if(opts) {
             for(var key in opts) {
-                this.prototype[key] = opts[key]
+                child.prototype[key] = opts[key]
             }
         }
-        return this
+        child.__super__ = parent.prototype
+        return child
     }
 
     return View

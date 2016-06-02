@@ -1,6 +1,6 @@
 # 超轻量级 View 库   [![npm](https://img.shields.io/npm/v/tiny-view.svg)](https://www.npmjs.com/package/tiny-view)  [![npm](https://img.shields.io/npm/dt/tiny-view.svg)](https://www.npmjs.com/package/tiny-view)
 
-80 行代码实现的超轻量 View 库，使用方法类似 Backbone.View，依赖 jquery(1.8+)。
+超轻量 View 库，使用方法类似 Backbone.View，依赖 jquery(1.8+)。
 
 ## Get Started
 
