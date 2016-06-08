@@ -52,10 +52,11 @@
 
     function View(opts) {
         if(this.init && typeof this.init == 'function') {
-            this.$el = $(this.el) || $('<div></div>')
+            this.el = this.el || '<div></div>'
+            this.$el = $(this.el)
             this.el = this.$el[0]
-            this._bindEvents()
             this.init(opts)
+            this._bindEvents()
         }else {
             console.error('please add init function')
         }
