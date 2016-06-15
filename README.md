@@ -80,3 +80,7 @@ view.$('selector')
 
 ### 其他没有了，就是这么简单。
 
+## Recent Release
+
+### v0.1.2
+- 修正 view 模块定义写法，使用AMD写法。

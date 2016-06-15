@@ -5,8 +5,7 @@
 !function(factory){
     // amd || cmd
     if(typeof define == 'function' && (define.cmd || define.amd)){
-        define(function(require){
-            var $ = require('jquery')
+        define(['jquery'], function($){
             return factory($)
         })
     }else{
