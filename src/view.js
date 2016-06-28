@@ -3,16 +3,22 @@
  * @author petermu
  */
 !function(factory){
-    // amd || cmd
-    if(typeof define == 'function' && (define.cmd || define.amd)){
-        define(['jquery'], function($){
+    // amd
+    if (typeof define == 'function' && define.amd) {
+        define(['jquery'], function($) {
             return factory($)
         })
-    }else{
-        if(window.jQuery){
+    //cmd
+    } else if (typeof define == 'function' && define.cmd) {
+        define(function(require, exports, module) {
+            var $ = require('jquery')
+            return factory($)
+        })
+    } else {
+        if (window.jQuery) {
             var ret = factory(window.jQuery)
             window.View = ret
-        }else{
+        } else {
             console && console.error('U need to load jquery!')
         }
     }
