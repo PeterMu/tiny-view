@@ -1,6 +1,6 @@
 {
   "name": "tiny-view",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "超轻量级 View 库",
   "main": "dist/view.js",
   "scripts": {
