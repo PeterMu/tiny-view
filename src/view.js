@@ -51,9 +51,7 @@
 
     function View(opts) {
         if(this.init && typeof this.init == 'function') {
-            this.el = this.el || '<div></div>'
-            this.$el = $(this.el)
-            this.el = this.$el[0]
+            this.setEl()
             this.init(opts)
             this._bindEvents()
         }else {
@@ -62,6 +60,11 @@
     }
 
     View.prototype = {
+        setEl: function(el) {
+            this.el = el || this.el || '<div></div>'
+            this.$el = $(this.el)
+            this.el = this.$el[0]
+        },
         init: $.noop,
         destroy: function() {
             //解绑挂载的所有事件
