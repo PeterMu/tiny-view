@@ -82,5 +82,6 @@ view.$('selector')
 
 ## Recent Release
 
-### v0.1.2
-- 修正 view 模块定义写法，使用AMD写法。
+### v0.1.3
+- 修正在seajs下的兼容问题。
+
