@@ -57,6 +57,8 @@
 
     function View(opts) {
         if(this.init && typeof this.init == 'function') {
+            this.opts = opts
+            this.data = {}
             this.setEl()
             this.init(opts)
             this._bindEvents()
@@ -90,7 +92,9 @@
                 match = key.match(/^(\S+)\s*(.*)$/)
                 eventType = match[1]
                 selector = match[2]
-                this.$el.on(eventType, selector, that[that.events[key]].bind(that))
+                if (that[that.events[key]]) {
+                    this.$el.on(eventType, selector, that[that.events[key]].bind(that))
+                }
             }
         }
     }

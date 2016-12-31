@@ -12,6 +12,8 @@
             this.$el.html('<button>Click me!</button>')
         },
         test: function() {
+            console.log('this.data:', this.data)
+            console.log('this.opts:', this.opts)
             alert('u click me')
         }
     })

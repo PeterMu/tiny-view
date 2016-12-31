@@ -78,10 +78,17 @@ view.$('selector')
 
 销毁 View，同时解绑绑定到 View 上的事件。
 
+### opts { any }
+
+初始化 View 时，传递的参数
+```
+var DemoView = View.extend({...})
+var view = new DemoView(opts) //opts === this.opts
+```
+
+### data { Object }
+
+初始化 View 时，会自动初始化 data 属性为一个空对象，View 内的数据应该都挂载在 data 上统一管理。
+
 ### 其他没有了，就是这么简单。
-
-## Recent Release
-
-### v0.1.3
-- 修正在seajs下的兼容问题。
 
